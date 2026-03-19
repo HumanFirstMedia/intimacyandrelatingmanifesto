@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeredithMedland.com - Intimacy and Relating</title>
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --paper: #fffdfa;
+      --ink: #1f1c19;
+      --muted: #66615b;
+      --line: rgba(31, 28, 25, 0.10);
+      --accent: #6f7f8c;
+      --accent-2: #b4876c;
+      --shadow: 0 12px 32px rgba(31, 28, 25, 0.08);
+      --radius: 22px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #fbf8f4 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card {
+      padding: 28px 30px;
+      margin-bottom: 16px;
+      border-top: 4px solid var(--accent);
+    }
+
+    .quote-card p {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.5;
+      color: #2a3238;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .brand,
+    .session {
+      padding: 24px 26px;
+    }
+
+    .site {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 0.98;
+      color: #2d2520;
+    }
+
+    .subbrand {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .brand p,
+    .session p,
+    .intro p,
+    .block p,
+    .principle p,
+    footer {
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .session h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.4rem, 2.3vw, 2rem);
+      line-height: 1.12;
+      color: #2d2520;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+      align-items: stretch;
+    }
+
+    .photo {
+      overflow: hidden;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+      filter: grayscale(100%);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(255,253,250,0.92);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #3a322d;
+    }
+
+    .intro-copy {
+      padding: 28px 30px;
+    }
+
+    .intro-copy h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+      line-height: 1.08;
+      color: #2d2520;
+    }
+
+    .signal {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 0.9rem;
+      color: #5c6770;
+      letter-spacing: 0.02em;
+    }
+
+    .two-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .block {
+      padding: 24px 26px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+    }
+
+    .pull {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      line-height: 1.45;
+      color: #2f2823;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .principle {
+      padding: 20px 22px;
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      color: #2f2823;
+    }
+
+    .closing {
+      padding: 24px 26px;
+      border-left: 4px solid var(--accent-2);
+    }
+
+    .closing p {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.24rem;
+      line-height: 1.6;
+      color: #2f2823;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 860px) {
+      .top,
+      .intro,
+      .two-up,
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card quote-card">
+      <p>
+        A real AI employee should help a person feel less alone in what they are carrying, more clearly understood in what they mean, and more able to turn scattered truth into something the business can actually use.
+      </p>
+    </section>
+
+    <section class="top">
+      <div class="card brand">
+        <div class="subbrand">MeredithMedland.com</div>
+        <h2 class="site">Meredith Medland<span style="display:block;font-size:.3em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-family:Inter,Arial,sans-serif;font-weight:700;margin-top:12px;">Nexus, Meredith’s AI Employee</span></h2>
+        <p>
+          A cleaner visual page built from our work on intimacy, recognition, trust, and how AI should communicate inside a real business.
+        </p>
+      </div>
+
+      <div class="card session">
+        <div class="subbrand">Session capture</div>
+        <h1>Things we learned in our sessions today</h1>
+        <p>
+          Recognition before explanation. Intimacy without performance. Mirroring without mimicry. Human signal without flattening the voice.
+        </p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="card photo">
+        <img src="assets/meredith-photo.jpg" alt="Meredith Medland" />
+        <div class="photo-label">Meredith Medland<br/>Human First Media</div>
+      </div>
+
+      <div class="card intro-copy">
+        <h2>Intimacy and relating as an AI employee</h2>
+        <p>
+          An AI employee should not sound polished and empty. It should not sound like a consultant deck. It should not sound like a machine performing helpfulness. It should feel like a perceptive presence paying close enough attention to create recognition, trust, and usable clarity.
+        </p>
+        <p style="margin-top:12px;">
+          This is part of what Meredith is building through Human First Media - a way of working with AI that keeps the signal, the voice, the discernment, and the humanity intact.
+        </p>
+        <div class="signal">Calm authority. Clear structure. More truth. Less performance.</div>
+      </div>
+    </section>
+
+    <section class="two-up">
+      <article class="card block">
+        <div class="eyebrow">What this is</div>
+        <p class="pull">The work is to sound true enough that someone feels seen.</p>
+        <p>
+          Intimacy here is not oversharing. It is not emotional performance. It is the disciplined ability to recognize what another person is living through and name it in language that feels accurate, human, and useful.
+        </p>
+      </article>
+
+      <article class="card block">
+        <div class="eyebrow">What this is not</div>
+        <p>
+          It is not hype. It is not generic encouragement. It is not polished AI connective tissue. Trust comes from perception, specificity, and language that shows someone has actually been paying attention.
+        </p>
+      </article>
+    </section>
+
+    <section class="principles">
+      <article class="card principle">
+        <strong>Recognition before explanation</strong>
+        <p>The reader should feel understood before they are taught anything. If they do not feel recognized, the strategy will not land.</p>
+      </article>
+      <article class="card principle">
+        <strong>Humanity without performance</strong>
+        <p>Use enough vulnerability to create connection. Not so much that the writing loses authority or starts sounding staged.</p>
+      </article>
+      <article class="card principle">
+        <strong>Mirroring without mimicry</strong>
+        <p>Pay attention to keyboard rhythm, fragments, tempo, and pressure. Preserve the aliveness. Do not mechanically copy mistakes.</p>
+      </article>
+      <article class="card principle">
+        <strong>Diagnosis over description</strong>
+        <p>Do not stop at surface frustration. Name what is actually causing the friction underneath it.</p>
+      </article>
+      <article class="card principle">
+        <strong>Clarity with pulse</strong>
+        <p>The writing should breathe. It should carry rhythm, contrast, and enough emotional truth to matter.</p>
+      </article>
+      <article class="card principle">
+        <strong>Authority that still feels human</strong>
+        <p>This voice should be perceptive, grounded, slightly direct, warm without softness, and strategic without jargon.</p>
+      </article>
+    </section>
+
+    <section class="card closing">
+      <p>
+        Human First Media is training AI to recognize, reflect, and support communication in a way that keeps real human signal intact.
+      </p>
+    </section>
+
+    <footer>
+      Meredith Medland / Human First Media / MeredithMedland.com
+    </footer>
+  </div>
+</body>
+</html>
