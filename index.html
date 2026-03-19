@@ -13,6 +13,8 @@
       --line: rgba(31, 28, 25, 0.10);
       --accent: #6f7f8c;
       --accent-2: #b4876c;
+      --soft: #eef2f4;
+      --soft-2: #f6efe9;
       --shadow: 0 12px 32px rgba(31, 28, 25, 0.08);
       --radius: 22px;
       --max: 980px;
@@ -44,6 +46,19 @@
       padding: 28px 30px;
       margin-bottom: 16px;
       border-top: 4px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-card:after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(111,127,140,0.12), transparent 70%);
     }
 
     .quote-card p {
@@ -52,6 +67,8 @@
       font-size: clamp(1.35rem, 2.4vw, 2rem);
       line-height: 1.5;
       color: #2a3238;
+      position: relative;
+      z-index: 1;
     }
 
     .top {
@@ -64,6 +81,20 @@
     .brand,
     .session {
       padding: 24px 26px;
+      position: relative;
+    }
+
+    .brand:before,
+    .session:before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      opacity: 0.85;
     }
 
     .site {
@@ -101,6 +132,22 @@
       font-size: clamp(1.4rem, 2.3vw, 2rem);
       line-height: 1.12;
       color: #2d2520;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .mini-tags span {
+      font-size: 0.82rem;
+      color: #53616b;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      border-radius: 999px;
     }
 
     .intro {
@@ -141,6 +188,7 @@
 
     .intro-copy {
       padding: 28px 30px;
+      position: relative;
     }
 
     .intro-copy h2 {
@@ -158,6 +206,34 @@
       font-size: 0.9rem;
       color: #5c6770;
       letter-spacing: 0.02em;
+    }
+
+    .icon-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .icon-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .icon-box span:last-child {
+      display: block;
+      font-size: 0.84rem;
+      line-height: 1.35;
+      color: #4f5a62;
     }
 
     .two-up {
@@ -197,11 +273,23 @@
 
     .principle {
       padding: 20px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .principle:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
     }
 
     .principle strong {
       display: block;
-      margin-bottom: 8px;
+      margin: 4px 0 8px;
       font-size: 0.98rem;
       line-height: 1.35;
       color: #2f2823;
@@ -210,6 +298,19 @@
     .closing {
       padding: 24px 26px;
       border-left: 4px solid var(--accent-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing:after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(180,135,108,0.12), transparent 70%);
     }
 
     .closing p {
@@ -217,6 +318,8 @@
       font-size: 1.24rem;
       line-height: 1.6;
       color: #2f2823;
+      position: relative;
+      z-index: 1;
     }
 
     footer {
@@ -229,7 +332,8 @@
       .top,
       .intro,
       .two-up,
-      .principles {
+      .principles,
+      .icon-row {
         grid-template-columns: 1fr;
       }
 
@@ -262,6 +366,11 @@
         <p>
           Recognition before explanation. Intimacy without performance. Mirroring without mimicry. Human signal without flattening the voice.
         </p>
+        <div class="mini-tags">
+          <span>recognition first</span>
+          <span>steady presence</span>
+          <span>clear signal</span>
+        </div>
       </div>
     </section>
 
@@ -280,6 +389,12 @@
           This is part of what Meredith is building through Human First Media - a way of working with AI that keeps the signal, the voice, the discernment, and the humanity intact.
         </p>
         <div class="signal">Calm authority. Clear structure. More truth. Less performance.</div>
+        <div class="icon-row">
+          <div class="icon-box"><span class="icon">◌</span><span>Recognition before explanation</span></div>
+          <div class="icon-box"><span class="icon">✦</span><span>Humanity without performance</span></div>
+          <div class="icon-box"><span class="icon">↺</span><span>Mirroring without mimicry</span></div>
+          <div class="icon-box"><span class="icon">▣</span><span>Usable clarity inside business</span></div>
+        </div>
       </div>
     </section>
 
